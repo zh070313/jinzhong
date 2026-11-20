@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>晋中 - NFC山西旅游攻略</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", serif;
+        }
+        body {
+            background-color: #fef9f2;
+            color: #5a3e2b;
+            line-height: 1.6;
+            padding-bottom: 30px;
+        }
+        .header {
+            background-color: #f8e9d1;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #e6c9a8;
+        }
+        .header h1 {
+            font-size: 28px;
+            color: #8b4513;
+            margin-bottom: 5px;
+        }
+        .header p {
+            font-size: 14px;
+            color: #a0522d;
+        }
+        .tab-bar {
+            display: flex;
+            background-color: #f5e6d3;
+            border-bottom: 1px solid #e6c9a8;
+        }
+        .tab-btn {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            background: none;
+            font-size: 16px;
+            color: #8b4513;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .tab-btn.active {
+            background-color: #f8d7a9;
+            font-weight: bold;
+            border-bottom: 3px solid #d2691e;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .section-title {
+            font-size: 22px;
+            color: #8b4513;
+            margin: 20px 0 15px;
+            padding-left: 10px;
+            border-left: 4px solid #d2691e;
+        }
+        .item-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.1);
+            overflow: hidden;
+        }
+        .item-card img {
+            width: 100%;
+            max-height: 300px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .item-card h3 {
+            font-size: 18px;
+            color: #8b4513;
+            margin-bottom: 8px;
+        }
+        .item-card p {
+            font-size: 14px;
+            color: #6b4423;
+        }
+        .dialect-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .dialect-item {
+            background-color: #fff;
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(139, 69, 19, 0.1);
+        }
+        .dialect-word {
+            font-size: 16px;
+            font-weight: bold;
+            color: #8b4513;
+        }
+        .dialect-pinyin {
+            font-size: 13px;
+            color: #a0522d;
+            margin: 3px 0;
+        }
+        .dialect-mean {
+            font-size: 14px;
+            color: #6b4423;
+        }
+        .culture-intro {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.1);
+        }
+        @media (max-width: 768px) {
+            .dialect-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>晋中市</h1>
+        <p>晋商故里 · 古城大院</p>
+    </div>
+
+    <div class="tab-bar">
+        <button class="tab-btn active" onclick="switchTab('route')">旅游路线</button>
+        <button class="tab-btn" onclick="switchTab('dialect')">人文方言</button>
+        <button class="tab-btn" onclick="switchTab('culture')">习俗非遗</button>
+    </div>
+
+    <!-- 旅游路线模块 -->
+    <div id="route" class="tab-content active">
+        <h2 class="section-title">常规旅游路线</h2>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/VcnoAzOJqL" alt="平遥古城">
+            <h3>平遥古城</h3>
+            <p>世界文化遗产，明清的古城保存完好，票号的发源地，古城里的古建与烟火气结合，感受晋商的文化与古城的历史。</p>
+        </div>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/kUsWAZo4Kh" alt="乔家大院">
+            <h3>乔家大院</h3>
+            <p>晋商的大院，清代的民居建筑，大院的布局精巧，雕刻精美，是晋商文化的代表，感受晋商的辉煌与大院的文化。</p>
+        </div>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/1sMVfgsk5p" alt="绵山">
+            <h3>绵山</h3>
+            <p>寒食节的发源地，这里的山水秀美，悬空的寺庙与栈道，是自然与人文结合的景区，感受绵山的风光与寒食节的文化。</p>
+        </div>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/qKathvmtB2" alt="王家大院">
+            <h3>王家大院</h3>
+            <p>民间的故宫，清代的民居建筑，大院的规模宏大，雕刻精美，是晋商文化的代表，感受晋商的辉煌与大院的文化。</p>
+        </div>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/sV4RsM3AXr" alt="晋中古城">
+            <h3>晋中古城</h3>
+            <p>榆次的古城，古城里的古建保存完好，常家庄园的古建都是国宝，古城的烟火气浓厚，晚上的古城更是灯火辉煌，感受古城的烟火气与历史。</p>
+        </div>
+
+        <h2 class="section-title">红色研学路线</h2>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/Jbrg3aDLvo" alt="八路军太行纪念馆">
+            <h3>八路军太行纪念馆</h3>
+            <p>记录了八路军的太行抗战历程，这里是太行抗日根据地的核心，感悟革命先辈的奉献，传承红色精神，是红色教育的基地。</p>
+        </div>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/CAg6A4zFwJ" alt="晋绥边区革命纪念馆">
+            <h3>晋绥边区革命纪念馆</h3>
+            <p>晋绥抗日根据地的纪念馆，这里记录了晋绥的革命历程，是红色教育的基地，感悟革命先辈的奉献，传承红色精神。</p>
+        </div>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/S0TmCPhhYo" alt="大寨纪念馆">
+            <h3>大寨纪念馆</h3>
+            <p>记录了大寨的奋斗历程，大寨的精神在这里传承，感悟大寨人的艰苦奋斗，传承红色精神，是红色教育的基地。</p>
+        </div>
+    </div>
+
+    <!-- 人文方言模块 -->
+    <div id="dialect" class="tab-content">
+        <div class="culture-intro">
+            <h3>方言片区</h3>
+            <p>晋中方言属晋语并州片，保留了晋语的入声，是晋中盆地的特色方言，各区县口音差异较小，承载着晋中的语言文化与历史记忆。</p>
+        </div>
+
+        <h2 class="section-title">本地方言词句</h2>
+        <div class="dialect-list">
+            <div class="dialect-item">
+                <div class="dialect-word">圪捣</div>
+                <div class="dialect-pinyin">gē dǎo</div>
+                <div class="dialect-mean">释义：捣乱、折腾</div>
+            </div>
+            <div class="dialect-item">
+                <div class="dialect-word">圪溜</div>
+                <div class="dialect-pinyin">gē liū</div>
+                <div class="dialect-mean">释义：溜达、闲逛</div>
+            </div>
+            <div class="dialect-item">
+                <div class="dialect-word">日脏</div>
+                <div class="dialect-pinyin">rì zāng</div>
+                <div class="dialect-mean">释义：脏、不干净</div>
+            </div>
+            <div class="dialect-item">
+                <div class="dialect-word">夜来</div>
+                <div class="dialect-pinyin">yè lái</div>
+                <div class="dialect-mean">释义：昨天</div>
+            </div>
+            <div class="dialect-item">
+                <div class="dialect-word">不赖</div>
+                <div class="dialect-pinyin">bù lài</div>
+                <div class="dialect-mean">释义：不错、挺好</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">人文情怀</h2>
+        <div class="culture-intro">
+            <p>晋中是晋商的故里，古城的宝地，这里的百姓既有晋中人的精明，又有晋商的诚信。晋商的文化在这里传承，票号的文化在这里延续，抗战时期，这里是太行与晋绥抗日根据地的核心，大寨的精神深深融入了晋中人的血脉。一代代晋中人，用自己的双手，把晋商的文化变成了发展的动力，也传承着这份厚重的文化与精神。</p>
+        </div>
+    </div>
+
+    <!-- 习俗非遗模块 -->
+    <div id="culture" class="tab-content">
+        <h2 class="section-title">特色美食</h2>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/AvUNaPGukI" alt="平遥牛肉">
+            <h3>平遥牛肉</h3>
+            <p>平遥的特色美食，用牛肉制作，卤制而成，口感醇香，肥而不腻，是当地人的宴席必备菜，也是晋中的特色美食，深受喜爱。</p>
+        </div>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/nURY2IrwbE" alt="榆次灌肠">
+            <h3>榆次灌肠</h3>
+            <p>榆次的特色小吃，用荞面制作，蒸制而成，搭配调料，酸辣可口，是当地人的最爱，也是晋中的特色小吃，深受百姓喜爱。</p>
+        </div>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/8X7sCSiGTt" alt="太谷饼">
+            <h3>太谷饼</h3>
+            <p>太谷的特色美食，用白面制作，烘烤而成，口感酥脆，香甜可口，是当地人的早餐最爱，也是晋中的特色美食，深受喜爱。</p>
+        </div>
+
+        <h2 class="section-title">非遗项目</h2>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/ciUK4J04FQ" alt="晋剧">
+            <h3>晋剧</h3>
+            <p>国家级非物质文化遗产，山西的地方戏曲，曲调悠扬，表演生动，是山西四大梆子之一，深受百姓喜爱，是晋中的传统艺术。</p>
+        </div>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/pUUfWgkZcd" alt="祁太秧歌">
+            <h3>祁太秧歌</h3>
+            <p>国家级非物质文化遗产，祁县太谷的传统秧歌，表演生动，曲调悠扬，是当地的传统艺术，常用于节庆活动，深受喜爱。</p>
+        </div>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/2Iw24Trpch" alt="晋中剪纸">
+            <h3>晋中剪纸</h3>
+            <p>省级非物质文化遗产，晋中的传统剪纸，色彩明艳，制作精美，是当地的传统艺术，深受喜爱，也是当地的特色礼品。</p>
+        </div>
+
+        <h2 class="section-title">传统民俗</h2>
+        <div class="culture-intro">
+            <p>晋中的传统民俗带着浓浓的晋中特色，古城庙会历史悠久，每逢庙会，各地的商贩、艺人齐聚，热闹非凡；元宵节的闹红火更是热闹，祁太秧歌、锣鼓、社火表演应有尽有。晋剧的戏曲代代传承，晋商的文化更是深深融入了晋中人的血脉，展现了晋中人的质朴与诚信，也传承着这份厚重的晋商文化。</p>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tabName) {
+            // 隐藏所有内容
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(item => {
+                item.classList.remove('active');
+            });
+            // 取消所有按钮的激活状态
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(item => {
+                item.classList.remove('active');
+            });
+            // 激活当前的
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
